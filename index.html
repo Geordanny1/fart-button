@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preload" href="fart-fixed.mp3" as="audio">
+	<title>Insert a number</title>
+	<style>
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 50vh;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		@media screen and (max-width: 720px){
+			div {
+				margin-top: 03vh;
+				height: auto;
+				gap: 0.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input id="number" min="1" max="2" type="number" name="quantity">
+		<button id="button" class="button">Analyze Number</button>
+	</div>
+	<script src="scripts.js"></script>
+</body>
+
+</html>
