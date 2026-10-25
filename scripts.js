@@ -1,27 +1,29 @@
-const numberEl = document.getElementById('number')
-const buttonEl = document.getElementById('button')
-const audioEl = new Audio('fart-fixed.mp3')
+const buttonEl   = document.getElementById('button');
+const fartMenuEl = document.getElementById('fart_menu');
 
-function delay(time) {
-  return new Promise (resolve => setTimeout(resolve, time))
+const defaultAudioEl = new Audio('./sounds/fart-fixed.mp3');
+const sofaAudioEl    = new Audio('./sounds/sofa.wav');
+const waggyAudioEl   = new Audio('./sounds/waggy.wav');
+const ecoAudioEl     = new Audio('./sounds/eco_fart.wav');
+
+const farts = {
+  'Default' : defaultAudioEl,
+  'Eco'     : ecoAudioEl,
+  'Waggy'   : waggyAudioEl,
+  'Sofa'    : sofaAudioEl
 }
 
-async function fart(numberOfFarts) {
-
-  for (let i = 0; i < numberOfFarts; i++) {
-    await delay(100)
-    audioEl.currentTime = 0;
-    audioEl.play()
-
-    console.log(`number of farts ${numberOfFarts}`)
-  }
-
+const playFart = fart => {
+  fart.currentTime = 0;
+  fart.play();
 }
 
+const getFart = () => {
+  return fartMenuEl.value;
+}
 
-buttonEl.addEventListener('click', () => {
-  let number = Number(numberEl.value)
-  fart(number)
+button.addEventListener('click', () => {
+  const fart = farts[getFart()];
+  playFart(fart);
 })
-
 

@@ -6,30 +6,43 @@
 	<link rel="preload" href="fart-fixed.mp3" as="audio">
 	<title>Insert a number</title>
 	<style>
-		div {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 50vh;
-			gap: 1rem;
-			flex-wrap: wrap;
-		}
 
-		@media screen and (max-width: 720px){
-			div {
-				margin-top: 03vh;
-				height: auto;
-				gap: 0.5rem;
-			}
-		}
+
+  
+  .helper {
+
+    width: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+
+  .button {
+    width: 150px;
+    height: 150px;
+
+  }
+  #fart_menu {
+    display:block;
+  }
 	</style>
 </head>
-<body>
-	<div>
-		<input id="number" min="1" max="2" type="number" name="quantity">
-		<button id="button" class="button">Analyze Number</button>
-	</div>
+  <body>
+
+    <div class="helper">
+      <button id="button" class="button">Play</button>
+      <select id="fart_menu" name="farts">
+        <option>Default</option>
+        <option>Eco</option>
+        <option>Waggy</option>
+        <option>Sofa</option>
+      </select>
+
+    </div>
+
 	<script src="scripts.js"></script>
+
 </body>
 
 </html>
